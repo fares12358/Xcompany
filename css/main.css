@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Titillium Web", sans-serif;
+}
+
+:root {
+    --bg-color: #dfaa4e;
+    --text-color: #161513;
+}
+
+body,
+html {
+    width: 100%;
+    background: var(--bg-color);
+    overflow: hidden;
+    
+}
+
+@media (max-width:780px) {
+body,
+html {
+    overflow-y: scroll;
+}
+}
+
+.navbar {
+    background: var(--bg-color);
+}
+
+.navbar li a {
+    cursor: pointer;
+}
+
+.main {
+    background: var(--bg-color);
+}
+
+.main h1 {
+    font-size: 80px !important;
+}
+
+.main-btn {
+    background: #000 !important;
+    border: none !important;
+}
+
+.main-btn:focus {
+    box-shadow: none;
+}
+
+.text-cont{
+    transform: translateY(100%);
+    opacity: 0;
+    animation: onloadAnim 1s ease-out forwards;
+}
+.img-cont{
+    transform: translateY(100%);
+    opacity: 0;
+    animation: onloadAnim 1s ease-out forwards;
+    animation-delay: .4s;
+}
+@keyframes onloadAnim {
+    0%{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.main .image {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+
+}
+
+
+.shadow-dv {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shadow-dv img {
+    animation: imgAnim 2s ease-in-out infinite;
+    animation-delay: 1.4s
+}
+
+@keyframes imgAnim {
+    0% {
+        transform: translateY(-10px);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.main .shadow-dv::after {
+    content: '';
+    width: 250px;
+    height: 50px;
+    background: #0000008f;
+    position: absolute;
+    bottom: -20px;
+    z-index: 1;
+    border-radius: 50%;
+    filter: blur(25px);
+    animation: shadowScale 2s ease-in-out infinite;
+    animation-delay: 1.4s;
+
+}
+
+@keyframes shadowScale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+
+    }
+
+    100% {
+        transform: scale(1);
+
+    }
+}
+
+.menu-bar {
+    box-shadow: none !important;
+    border: 2px solid black !important;
+
+
+}
+
+.menu-bar:focus {
+    box-shadow: none !important;
+
+}
+
+@media (min-width:1003px) {
+    .main .container {
+        padding-top: 80px;
+    }
+
+    .main .image {
+        max-width: 80%;
+    }
+}
+
+
+@media (max-width:576px) {
+    .menu-bar {
+        padding: 0px 5px !important;
+    }
+}
